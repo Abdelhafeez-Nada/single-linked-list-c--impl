@@ -46,6 +46,17 @@ void print_rec(Node *ptr)
     print_rec(ptr->next);
 }
 
+void delete_list(Node *ptr)
+{
+    Node *temp;
+    while (ptr != nullptr)
+    {
+        temp = ptr;
+        ptr = ptr->next;
+        delete temp;
+    }
+}
+
 int main()
 {
     Node *head = new Node(1);
@@ -61,10 +72,11 @@ int main()
     n5->next = nullptr;
     Node *ptr = head;
     print_while(ptr);
-    ptr = nullptr;
+    delete_list(ptr);
     ptr = head;
     print_for(head);
-    ptr = nullptr;
     ptr = head;
     print_rec(ptr);
+
+    delete_list(head);
 }

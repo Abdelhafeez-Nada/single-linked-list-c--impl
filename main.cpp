@@ -19,6 +19,14 @@ void print_while(Node *ptr)
     cout << "---------------print_while-------------------\n";
 }
 
+void print_for(Node *ptr)
+{
+    cout << "---------------print_for-------------------\n";
+    for (; ptr != nullptr; ptr = ptr->next)
+        cout << ptr->data << endl;
+    cout << "---------------print_for-------------------\n";
+}
+
 int main()
 {
     Node *head = new Node(1);
@@ -34,4 +42,7 @@ int main()
     n5->next = nullptr;
     Node *ptr = head;
     print_while(ptr);
+    ptr = nullptr;
+    ptr = head;
+    print_for(head);
 }

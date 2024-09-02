@@ -27,6 +27,25 @@ void print_for(Node *ptr)
     cout << "---------------print_for-------------------\n";
 }
 
+void print_rec(Node *ptr)
+{
+    static bool isFirstCall = true;
+
+    if (isFirstCall)
+    {
+        cout << "---------------print_rec-------------------\n";
+        isFirstCall = false;
+    }
+    if (ptr == nullptr)
+    {
+        cout << "---------------print_rec-------------------\n";
+        return;
+    }
+
+    cout << ptr->data << endl;
+    print_rec(ptr->next);
+}
+
 int main()
 {
     Node *head = new Node(1);
@@ -45,4 +64,7 @@ int main()
     ptr = nullptr;
     ptr = head;
     print_for(head);
+    ptr = nullptr;
+    ptr = head;
+    print_rec(ptr);
 }

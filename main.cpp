@@ -8,6 +8,17 @@ struct Node
     Node(int data) : data(data) {}
 };
 
+void print_while(Node *ptr)
+{
+    cout << "---------------print_while-------------------\n";
+    while (ptr != nullptr)
+    {
+        cout << ptr->data << endl;
+        ptr = ptr->next;
+    }
+    cout << "---------------print_while-------------------\n";
+}
+
 int main()
 {
     Node *head = new Node(1);
@@ -21,4 +32,6 @@ int main()
     n3->next = n4;
     n4->next = n5;
     n5->next = nullptr;
+    Node *ptr = head;
+    print_while(ptr);
 }

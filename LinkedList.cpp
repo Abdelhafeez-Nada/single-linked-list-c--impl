@@ -54,4 +54,13 @@ public:
             return current;
         return nullptr;
     }
+
+    Node *get_nth_for(int n)
+    {
+        int i = 0;
+        for (Node *current = head; current; current = current->next)
+            if (++i == n)
+                return current;
+        return nullptr;
+    }
 };

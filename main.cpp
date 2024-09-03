@@ -14,7 +14,8 @@ int main()
 
     list.print();
     cout << endl;
-    Node *found = list.get_nth_while(5);
+    Node *found = list.get_nth_for(4);
+
     if (found != nullptr)
         cout << found->data;
     else

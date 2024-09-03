@@ -77,6 +77,6 @@ public:
             ptr = ptr->next;
             idx++;
         }
-        return idx;
+        return -1;
     }
 };

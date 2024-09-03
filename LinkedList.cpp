@@ -63,4 +63,20 @@ public:
                 return current;
         return nullptr;
     }
+
+    int search(int value)
+    {
+        if (head->data == value)
+            return 0;
+        int idx = 1;
+        Node *ptr = head->next;
+        while (ptr != nullptr)
+        {
+            if (ptr->data == value)
+                return idx;
+            ptr = ptr->next;
+            idx++;
+        }
+        return idx;
+    }
 };

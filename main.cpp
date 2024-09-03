@@ -14,10 +14,8 @@ int main()
 
     list.print();
     cout << endl;
-    Node *found = list.get_nth_for(4);
+    // Node *found = list.get_nth_for(4);
 
-    if (found != nullptr)
-        cout << found->data;
-    else
-        cout << "Not Found";
+    int idx = list.search(3);
+    cout << "found: " << idx;
 }

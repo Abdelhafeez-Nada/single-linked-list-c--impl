@@ -13,10 +13,12 @@ class LinkedList
 private:
     Node *head{};
     Node *tail{};
+    int length = 0;
 
 public:
     void print()
     {
+        cout << "Length: " << length << endl;
         Node *current = head;
         while (current != nullptr)
         {
@@ -30,14 +32,26 @@ public:
     {
         Node *newNode = new Node(val);
         Node *current = head;
-        if (head == nullptr)
+        if (head != nullptr)
         {
+            tail->next = newNode;
             tail = newNode;
-            head = newNode;
         }
-        while (current->next != nullptr)
+        else
+            head = tail = newNode;
+        length++;
+    }
+
+    Node *get_nth_while(int n)
+    {
+        Node *current = head;
+        while (current != nullptr && n > 1)
+        {
             current = current->next;
-        current->next = newNode;
-        tail = newNode;
+            n--;
+        }
+        if (current != nullptr && n == 1)
+            return current;
+        return nullptr;
     }
 };

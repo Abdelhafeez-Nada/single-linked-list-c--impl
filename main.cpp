@@ -57,6 +57,17 @@ void delete_list(Node *ptr)
     }
 }
 
+Node *find(Node *ptr, int val)
+{
+    while (ptr != nullptr)
+    {
+        if (ptr->data == val)
+            return ptr;
+        ptr = ptr->next;
+    }
+    return nullptr;
+}
+
 int main()
 {
     Node *head = new Node(1);
@@ -70,13 +81,15 @@ int main()
     n3->next = n4;
     n4->next = n5;
     n5->next = nullptr;
-    Node *ptr = head;
-    print_while(ptr);
-    delete_list(ptr);
-    ptr = head;
-    print_for(head);
-    ptr = head;
-    print_rec(ptr);
 
-    delete_list(head);
+    cout << "HEAD-1: " << &head << endl;
+    Node *ptr = head;
+    Node *found = find(ptr, 4);
+    cout << "FOUND >> data: " << found->data << "next: " << found->next->data;
+
+    delete_list(ptr);
+
+    cout << "HEAD-1: " << &head << endl;
+
+    print_for(head);
 }

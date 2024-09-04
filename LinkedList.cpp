@@ -18,7 +18,7 @@ private:
 public:
     void print()
     {
-        cout << "Length: " << length << endl;
+        cout << "Length: " << length << " | Head: " << head->data << " | Tail: " << tail->data << endl;
         Node *current = head;
         while (current != nullptr)
         {
@@ -75,6 +75,41 @@ public:
             if (ptr->data == value)
                 return idx;
             ptr = ptr->next;
+            idx++;
+        }
+        return -1;
+    }
+
+    int search_transposition(int value)
+    {
+        if (head->data == value)
+            return 0;
+
+        Node *prev = head->next;
+        if (prev->data == value)
+        {
+            head->next = prev->next;
+            prev->next = head;
+            head = prev;
+            return 0;
+        }
+        Node *pre = head;
+        Node *current = prev->next;
+        int idx = 1;
+        while (current != nullptr)
+        {
+            if (current->data == value)
+            {
+                pre->next = current;
+                prev->next = current->next;
+                current->next = prev;
+                if (current == tail)
+                    tail = prev;
+                return idx;
+            }
+            pre = prev;
+            prev = current;
+            current = current->next;
             idx++;
         }
         return -1;

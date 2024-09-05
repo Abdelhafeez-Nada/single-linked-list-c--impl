@@ -16,7 +16,7 @@ int main()
     cout << endl;
     // Node *found = list.get_nth_for(4);
 
-    int idx = list.search_transposition(5);
+    int idx = list.search_transposition(3);
     cout << "found: " << idx << endl;
 
     list.print();

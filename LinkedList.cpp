@@ -84,7 +84,6 @@ public:
     {
         if (head->data == value)
             return 0;
-
         Node *prev = head->next;
         if (prev->data == value)
         {
@@ -106,7 +105,7 @@ public:
                 if (current == tail)
                     tail = prev;
                 return idx;
-            }
+            } 
             pre = prev;
             prev = current;
             current = current->next;

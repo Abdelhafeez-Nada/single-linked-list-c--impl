@@ -54,6 +54,19 @@ public:
         length++;
     }
 
+    void insert_front(int val)
+    {
+        Node *newNode = new Node(val);
+        if (head == nullptr)
+            head = tail = newNode;
+        else
+        {
+            newNode->next = head;
+            head = newNode;
+        }
+        length++;
+    }
+
     Node *get_nth_while(int n)
     {
         Node *current = head;

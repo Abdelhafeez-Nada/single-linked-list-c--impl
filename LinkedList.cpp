@@ -16,6 +16,18 @@ private:
     int length = 0;
 
 public:
+    ~LinkedList()
+    {
+        cout << "\n LINKEDLIST DESTRUCTOR STARTED\n";
+        while (head != nullptr)
+        {
+            Node *current = head->next;
+            delete head;
+            head = current;
+        }
+    }
+
+public:
     void print()
     {
         cout << "Length: " << length << " | Head: " << head->data << " | Tail: " << tail->data << endl;
@@ -105,7 +117,7 @@ public:
                 if (current == tail)
                     tail = prev;
                 return idx;
-            } 
+            }
             pre = prev;
             prev = current;
             current = current->next;

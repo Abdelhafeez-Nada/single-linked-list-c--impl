@@ -175,4 +175,14 @@ public:
         }
         length--;
     }
+
+    Node* get_head(){
+        return head;
+    }
+
+    int get_length(){
+        return get_length(){
+            return length;
+        }
+    }
 };

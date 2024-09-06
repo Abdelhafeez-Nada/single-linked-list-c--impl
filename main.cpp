@@ -18,21 +18,19 @@ int main()
 
     list.insert_end(6);
 
-    list.print();
+    LinkedList list2;
 
-    cout << "---------------------------------\n";
+    list2.insert_end(1);
 
-    for (int i = 6; i >= 1; i--)
-    {
-        Node *found = list.get_nth_back(i);
-        cout << found->data << " ";
-    }
+    list2.insert_end(2);
 
-    cout << endl;
+    list2.insert_end(3);
 
-    for (int i = 1; i <= 6; i++)
-    {
-        Node *found = list.get_nth_back(i);
-        cout << found->data << " ";
-    }
+    list2.insert_end(4);
+
+    // list2.insert_end(5);
+
+    list2.insert_end(6);
+
+    cout << list.is_same_use_length(list2) << endl;
 }

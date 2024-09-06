@@ -30,6 +30,10 @@ public:
 public:
     void print()
     {
+        if (head == nullptr)
+        {
+            cout << "Length: 0" << endl;
+        }
         cout << "Length: " << length << " | Head: " << head->data << " | Tail: " << tail->data << endl;
         Node *current = head;
         while (current != nullptr)
@@ -137,5 +141,20 @@ public:
             idx++;
         }
         return -1;
+    }
+
+    void delete_front()
+    {
+        if (head == nullptr)
+            return;
+        if (head == tail)
+            delete head;
+        else
+        {
+            Node *newHead = head->next;
+            delete head;
+            head = newHead;
+        }
+        length--;
     }
 };

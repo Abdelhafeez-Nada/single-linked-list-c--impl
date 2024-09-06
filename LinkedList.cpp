@@ -194,6 +194,39 @@ public:
         tail->next = nullptr;
     }
 
+    void delete_with_key(int val)
+    {
+        if (head == nullptr)
+            return;
+
+        if (head->data == val)
+        {
+            Node *oldHead = head;
+            head = head->next;
+            if (head == nullptr)
+                tail = nullptr;
+            delete oldHead;
+            length--;
+            return;
+        }
+        Node *prev = head;
+        Node *current = head->next;
+        while (current != nullptr)
+        {
+            if (current->data == val)
+            {
+                prev->next = current->next;
+                if (current == tail)
+                    tail = prev;
+                delete current;
+                length--;
+                return;
+            }
+            prev = current;
+            current = current->next;
+        }
+    }
+
     Node *get_head() const
     {
         return head;

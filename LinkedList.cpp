@@ -181,8 +181,6 @@ public:
     }
 
     int get_length(){
-        return get_length(){
             return length;
-        }
     }
 };

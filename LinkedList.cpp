@@ -176,6 +176,24 @@ public:
         length--;
     }
 
+    void delete_tail()
+    {
+        if (head == nullptr)
+            return;
+        if (head == tail)
+        {
+            delete head;
+            head = tail = nullptr;
+            return;
+        }
+        Node *current = head;
+        while (current->next != tail)
+            current = current->next;
+        delete tail;
+        tail = current;
+        tail->next = nullptr;
+    }
+
     Node *get_head() const
     {
         return head;

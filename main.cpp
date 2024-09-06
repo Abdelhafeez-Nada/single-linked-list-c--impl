@@ -18,30 +18,8 @@ int main()
     list.print();
     cout << endl;
 
-    list.delete_last();
+    list.delete_nth(1);
     list.print();
-    cout << endl;
-
-    list.delete_last();
-    list.print();
-    cout << endl;
-
-    list.delete_last();
-    list.print();
-    cout << endl;
-
-    list.delete_last();
-    list.print();
-    cout << endl;
-
-    list.delete_last();
-    list.print();
-    cout << endl;
-
-    list.delete_last();
-    list.print();
-    cout << endl;
-
     // LinkedList list;
 
     // list.insert_end(11);

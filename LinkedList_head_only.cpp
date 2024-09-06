@@ -69,4 +69,33 @@ public:
         delete current->next;
         current->next = nullptr;
     }
+
+    // n based-1
+    void delete_nth(int n)
+    {
+        if (n < 1 || head == nullptr)
+            return;
+        // delete head
+        if (n == 1)
+        {
+            Node *oldHead = head;
+            head = head->next;
+            delete oldHead;
+            return;
+        }
+        Node *prev = head;
+        Node *current = head->next;
+        int idx = 2;
+        while (idx < n && current != nullptr)
+        {
+            prev = current;
+            current = current->next;
+            idx++;
+        }
+        if (idx == n && current != nullptr)
+        {
+            prev->next = current->next;
+            delete current;
+        }
+    }
 };

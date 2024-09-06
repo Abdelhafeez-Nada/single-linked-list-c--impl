@@ -6,13 +6,33 @@ int main()
 {
     LinkedList list;
 
-    // list.insert_front(2);
+    list.insert_end(1);
 
-    // list.insert_end(7);
-    // list.insert_front(13);
+    list.insert_end(2);
 
-    // list.print();
+    list.insert_end(3);
 
-    // list.delete_front();
+    list.insert_end(4);
+
+    list.insert_end(5);
+
+    list.insert_end(6);
+
     list.print();
+
+    cout << "---------------------------------\n";
+
+    for (int i = 6; i >= 1; i--)
+    {
+        Node *found = list.get_nth_back(i);
+        cout << found->data << " ";
+    }
+
+    cout << endl;
+
+    for (int i = 1; i <= 6; i++)
+    {
+        Node *found = list.get_nth_back(i);
+        cout << found->data << " ";
+    }
 }

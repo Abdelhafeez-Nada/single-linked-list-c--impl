@@ -93,6 +93,24 @@ public:
         return nullptr;
     }
 
+    Node *get_nth_back(int n)
+    {
+        if (n < 1 || n > length)
+            return nullptr;
+        int idx = length - n;
+        if (idx == 0)
+            return head;
+        if (idx == length - 1)
+            return tail;
+        Node *current = head;
+        while (idx > 0)
+        {
+            current = current->next;
+            idx--;
+        }
+        return current;
+    }
+
     int search(int value)
     {
         if (head->data == value)

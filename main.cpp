@@ -6,13 +6,13 @@ int main()
 {
     LinkedList list;
 
-    list.insert_end(1);
+    list.insert_end(11);
 
     list.insert_end(2);
 
     list.insert_end(3);
 
-    list.insert_end(4);
+    list.insert_end(41);
 
     list.insert_end(5);
 
@@ -20,17 +20,17 @@ int main()
 
     LinkedList list2;
 
-    list2.insert_end(1);
+    list2.insert_end(11);
 
     list2.insert_end(2);
 
     list2.insert_end(3);
 
-    list2.insert_end(4);
+    list2.insert_end(41);
 
-    // list2.insert_end(5);
+    list2.insert_end(5);
 
-    list2.insert_end(6);
+    // list2.insert_end(6);
 
     cout << list.is_same_use_length(list2) << endl;
 }

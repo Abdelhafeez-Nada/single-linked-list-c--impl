@@ -201,4 +201,18 @@ public:
         }
         return true;
     }
+
+    bool is_same_no_length(const LinkedList &another)
+    {
+        Node *current = head;
+        Node *another_current = another.get_head();
+        while (current != nullptr && another_current != nullptr)
+        {
+            if (current->data != another_current->data)
+                return false;
+            current = current->next;
+            another_current = another_current->next;
+        }
+        return current == nullptr && another_current == nullptr;
+    }
 };

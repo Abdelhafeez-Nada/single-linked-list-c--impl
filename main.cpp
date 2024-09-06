@@ -16,9 +16,31 @@ int main()
     list.add_element(6);
 
     list.print();
-
     cout << endl;
-    cout << list.get_tail()->data;
+
+    list.delete_last();
+    list.print();
+    cout << endl;
+
+    list.delete_last();
+    list.print();
+    cout << endl;
+
+    list.delete_last();
+    list.print();
+    cout << endl;
+
+    list.delete_last();
+    list.print();
+    cout << endl;
+
+    list.delete_last();
+    list.print();
+    cout << endl;
+
+    list.delete_last();
+    list.print();
+    cout << endl;
 
     // LinkedList list;
 

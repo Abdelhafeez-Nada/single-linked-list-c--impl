@@ -39,6 +39,8 @@ public:
 
     void print()
     {
+        if (head == nullptr)
+            cout << "EMPTY!";
         for (Node *cur = head; cur; cur = cur->next)
             cout << cur->data << " ";
     }
@@ -49,5 +51,22 @@ public:
         while (current->next != nullptr)
             current = current->next;
         return current;
+    }
+
+    void delete_last()
+    {
+        if (head == nullptr)
+            return;
+        if (head->next == nullptr)
+        {
+            delete head;
+            head = nullptr;
+            return;
+        }
+        Node *current = head;
+        while (current->next->next != nullptr)
+            current = current->next;
+        delete current->next;
+        current->next = nullptr;
     }
 };

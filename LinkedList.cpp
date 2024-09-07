@@ -44,6 +44,22 @@ public:
         cout << endl;
     }
 
+    void print_addresses()
+    {
+        if (head == nullptr)
+        {
+            cout << "Length: 0" << endl;
+        }
+        cout << "Length: " << length << " | Head: " << head << " | Tail: " << tail << endl;
+        Node *current = head;
+        while (current != nullptr)
+        {
+            cout << current << " ";
+            current = current->next;
+        }
+        cout << endl;
+    }
+
     void insert_end(int val)
     {
         Node *newNode = new Node(val);
@@ -419,4 +435,20 @@ public:
     //         }
     //         length++;
     //     }
+
+    void swap_head_and_tail()
+    {
+        if (!head || !head->next)
+            return;
+        Node *after_head = head->next;
+        Node *before_tail = head;
+        while (before_tail->next->next != nullptr)
+            before_tail = before_tail->next;
+        tail->next = after_head;
+        before_tail->next = head;
+        head->next = nullptr;
+        Node *temp = head;
+        head = tail;
+        tail = temp;
+    }
 };

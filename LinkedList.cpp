@@ -314,4 +314,25 @@ public:
         head = tail;
         tail = temp;
     }
+
+    // position is 1-based
+    void delete_even_position()
+    {
+        if (head == nullptr || head->next == nullptr)
+            return;
+        Node *prev = head;
+        Node *current = nullptr;
+        while (prev && prev->next)
+        {
+            current = prev->next;
+            prev->next = current->next;
+            delete current;
+            length--;
+
+            if (prev->next == nullptr)
+                tail = prev;
+
+            prev = prev->next;
+        }
+    }
 };

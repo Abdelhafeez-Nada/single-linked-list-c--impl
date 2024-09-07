@@ -289,4 +289,29 @@ public:
         n1->data = n2->data;
         n2->data = temp;
     }
+
+    void reverse()
+    {
+        if (head == nullptr || head->next == nullptr)
+            return;
+
+        Node *n1 = head;
+        Node *n2 = head->next;
+        // Node *n3 = n2->next;
+        Node *n3 = nullptr;
+
+        while (n2)
+        {
+            n3 = n2->next;
+            n2->next = n1;
+            n1 = n2;
+            n2 = n3;
+            // if (n3)
+            //     n3 = n3->next;
+        }
+        head->next = nullptr;
+        Node *temp = head;
+        head = tail;
+        tail = temp;
+    }
 };

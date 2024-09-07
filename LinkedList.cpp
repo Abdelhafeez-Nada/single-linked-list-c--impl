@@ -267,19 +267,32 @@ public:
         return current == nullptr && another_current == nullptr;
     }
 
+    // void swap_pairs_values()
+    // {
+    //     if (head == nullptr || head->next == nullptr)
+    //         return;
+
+    //     Node *before = head;
+    //     Node *after = head->next;
+    //     while (before && after)
+    //     {
+    //         swap_values(before, after);
+    //         before = after->next;
+    //         if (before)
+    //             after = before->next;
+    //     }
+    // }
+
     void swap_pairs_values()
     {
         if (head == nullptr || head->next == nullptr)
             return;
 
-        Node *before = head;
-        Node *after = head->next;
-        while (before && after)
+        Node *current = head;
+        while (current && current->next)
         {
-            swap_values(before, after);
-            before = after->next;
-            if (before)
-                after = before->next;
+            swap_values(current, current->next);
+            current = current->next->next;
         }
     }
 

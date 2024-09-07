@@ -335,4 +335,75 @@ public:
             prev = prev->next;
         }
     }
+
+    // sort ASC
+    void insert_sorted(int val)
+    {
+        Node *to_insert = new Node(val);
+        // empty list
+        if (!head)
+            head = tail = to_insert;
+        // insert at head
+        else if (head->data > val)
+        {
+            to_insert->next = head;
+            head = to_insert;
+        }
+        // insert in middle pr tail
+        else
+        {
+            Node *current = head;
+            // loop until find correct position to insert at
+            while (current->next && current->next->data < val)
+                current = current->next;
+            to_insert->next = current->next;
+            current->next = to_insert;
+            if (!to_insert->next)
+                tail = to_insert;
+        }
+        length++;
+    }
+
+    // //sort ASC
+    //     void insert_sorted(int val)
+    //     {
+    //         Node *node = new Node(val);
+    //         // first node
+    //         if (head == nullptr)
+    //         {
+    //             head = tail = node;
+    //         }
+    //         else if (val < head->data)
+    //         {
+    //             node->next = head;
+    //             head = node;
+    //         }
+    //         else
+    //         {
+    //             Node *prev = head;
+    //             Node *current = nullptr;
+    //             while (prev)
+    //             {
+    //                 current = prev->next;
+    //                 // last node
+    //                 if (current == nullptr)
+    //                 {
+    //                     prev->next = node;
+    //                     node->next = nullptr;
+    //                     tail = node;
+    //                     break;
+    //                 }
+    //                 // in middle
+    //                 else if (current->data > val)
+    //                 {
+    //                     prev->next = node;
+    //                     node->next = current;
+    //                     break;
+    //                 }
+    //                 else
+    //                     prev = prev->next;
+    //             }
+    //         }
+    //         length++;
+    //     }
 };

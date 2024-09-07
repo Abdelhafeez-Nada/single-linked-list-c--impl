@@ -7,20 +7,26 @@ int main()
 {
 
     LinkedList list;
-    list.insert_end(1);
-    list.insert_end(2);
+    // 10 2 30 4 1
+    list.insert_sorted(10);
+    list.insert_sorted(2);
+    list.insert_sorted(30);
+    list.insert_sorted(4);
+    list.insert_sorted(1);
+    // list.insert_end(1);
+    // list.insert_end(2);
 
-    list.insert_end(3);
-    list.insert_end(4);
+    // list.insert_end(3);
+    // list.insert_end(4);
     // list.insert_end(5);
     // list.insert_end(6);
 
     list.print();
-    cout << "\n---------------------------------------\n";
+    // cout << "\n---------------------------------------\n";
 
-    list.delete_even_position();
+    // list.delete_even_position();
 
-    list.print();
+    // list.print();
 
     // LinkedList list;
     // list.insert_end(1);

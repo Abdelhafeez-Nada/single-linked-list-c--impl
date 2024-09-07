@@ -8,49 +8,63 @@ int main()
 
     LinkedList list;
     list.insert_end(1);
-    list.insert_end(1);
-
     list.insert_end(2);
-    list.insert_end(2);
+
     list.insert_end(3);
-    list.insert_end(3);
-
     list.insert_end(4);
-    list.insert_end(4);
-
-    list.insert_end(5);
-    list.insert_end(5);
-
-    list.insert_end(7);
-
-    list.insert_end(6);
+    // list.insert_end(5);
 
     list.print();
     cout << "\n---------------------------------------\n";
 
-    list.delete_with_key(1);
+    list.swap_pairs();
     list.print();
-    cout << "\n---------------------------------------\n";
 
-    list.delete_with_key(2);
-    list.print();
-    cout << "\n---------------------------------------\n";
+    // LinkedList list;
+    // list.insert_end(1);
+    // list.insert_end(1);
 
-    list.delete_with_key(3);
-    list.print();
-    cout << "\n---------------------------------------\n";
+    // list.insert_end(2);
+    // list.insert_end(2);
+    // list.insert_end(3);
+    // list.insert_end(3);
 
-    list.delete_with_key(4);
-    list.print();
-    cout << "\n---------------------------------------\n";
+    // list.insert_end(4);
+    // list.insert_end(4);
 
-    list.delete_with_key(5);
-    list.print();
-    cout << "\n---------------------------------------\n";
+    // list.insert_end(5);
+    // list.insert_end(5);
 
-    list.delete_with_key(6);
-    list.print();
-    cout << "\n---------------------------------------\n";
+    // list.insert_end(7);
+
+    // list.insert_end(6);
+
+    // list.print();
+    // cout << "\n---------------------------------------\n";
+
+    // list.delete_with_key(1);
+    // list.print();
+    // cout << "\n---------------------------------------\n";
+
+    // list.delete_with_key(2);
+    // list.print();
+    // cout << "\n---------------------------------------\n";
+
+    // list.delete_with_key(3);
+    // list.print();
+    // cout << "\n---------------------------------------\n";
+
+    // list.delete_with_key(4);
+    // list.print();
+    // cout << "\n---------------------------------------\n";
+
+    // list.delete_with_key(5);
+    // list.print();
+    // cout << "\n---------------------------------------\n";
+
+    // list.delete_with_key(6);
+    // list.print();
+    // cout << "\n---------------------------------------\n";
 
     // LinkedList_head_only list;
 

@@ -266,4 +266,27 @@ public:
         }
         return current == nullptr && another_current == nullptr;
     }
+
+    void swap_pairs_values()
+    {
+        if (head == nullptr || head->next == nullptr)
+            return;
+
+        Node *before = head;
+        Node *after = head->next;
+        while (before && after)
+        {
+            swap_values(before, after);
+            before = after->next;
+            if (before)
+                after = before->next;
+        }
+    }
+
+    void swap_values(Node *n1, Node *n2)
+    {
+        int temp = n1->data;
+        n1->data = n2->data;
+        n2->data = temp;
+    }
 };

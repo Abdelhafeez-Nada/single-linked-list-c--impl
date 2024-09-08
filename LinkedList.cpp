@@ -478,4 +478,34 @@ public:
         new_tail->next = nullptr;
         head = new_head;
     }
+
+    void remove_duplicates()
+    {
+        if (head == nullptr || head->next == nullptr)
+            return;
+
+        Node *unique = head;
+        Node *prev = nullptr;
+        while (unique != nullptr)
+        {
+            prev = unique;
+            while (prev != nullptr && prev->next != nullptr)
+            {
+                // check and remove duplicates
+                if (prev->next->data == unique->data)
+                {
+                    Node *temp = prev->next;
+                    prev->next = temp->next;
+                    delete temp;
+                    length--;
+                    // maintain tail
+                    if (prev->next == nullptr)
+                        tail = prev;
+                }
+                else
+                    prev = prev->next;
+            }
+            unique = unique->next;
+        }
+    }
 };

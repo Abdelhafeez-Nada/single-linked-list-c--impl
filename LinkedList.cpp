@@ -451,4 +451,31 @@ public:
         head = tail;
         tail = temp;
     }
+
+    void left_rotate_once()
+    {
+        if (head == nullptr || head->next == nullptr)
+            return;
+        Node *newHead = head->next;
+        tail->next = head;
+        head->next = nullptr;
+        head = newHead;
+        tail = tail->next;
+    }
+
+    void left_rotate_n_times(int n)
+    {
+        n = n % length;
+        if (head == nullptr || head->next == nullptr || n == 0)
+            return;
+        Node *new_tail = head;
+
+        for (int i = 1; i < n; i++)
+            new_tail = new_tail->next;
+        Node *new_head = new_tail->next;
+        tail->next = head;
+        tail = new_tail;
+        new_tail->next = nullptr;
+        head = new_head;
+    }
 };

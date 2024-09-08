@@ -17,12 +17,14 @@ int main()
     list.insert_end(6);
 
     list.print();
-    cout << "\n---------------------------------------\n";
-
+    cout << endl;
     list.print_addresses();
-    list.swap_head_and_tail();
     cout << "\n---------------------------------------\n";
 
+    list.left_rotate_n_times(2);
+
+    list.print();
+    cout << endl;
     list.print_addresses();
 
     // list.delete_even_position();

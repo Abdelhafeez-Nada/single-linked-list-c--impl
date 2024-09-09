@@ -547,4 +547,33 @@ public:
                 tail = prev;
         }
     }
+
+    void move_to_back(int val)
+    {
+        if (head == nullptr || head->next == nullptr)
+            return;
+        Node *old_tail = tail;
+        Node *ptr = head;
+        while (ptr->next != old_tail)
+        {
+            if (ptr->next->data == val)
+            {
+                Node *new_tail = ptr->next;
+                ptr->next = new_tail->next;
+                new_tail->next = nullptr;
+                tail->next = new_tail;
+                tail = new_tail;
+            }
+            else
+                ptr = ptr->next;
+        }
+        if (head->data == val)
+        {
+            Node *new_tail = head;
+            head = head->next;
+            new_tail->next = nullptr;
+            tail->next = new_tail;
+            tail = new_tail;
+        }
+    }
 };

@@ -7,19 +7,26 @@ int main()
 {
 
     LinkedList list;
-
+    // 1, 2, 3, 1, 2, 4, 1, 7, 1, 8, 1, 1
     list.insert_end(1);
     list.insert_end(2);
     list.insert_end(3);
     list.insert_end(1);
+    list.insert_end(2);
     list.insert_end(4);
+    list.insert_end(1);
+    list.insert_end(7);
+    list.insert_end(1);
+    list.insert_end(8);
+    list.insert_end(1);
+    list.insert_end(1);
 
     list.print();
     cout << endl;
     list.print_addresses();
     cout << "\n---------------------------------------\n";
 
-    list.remove_last_occurance(17);
+    list.move_to_back(1);
 
     list.print();
     cout << endl;

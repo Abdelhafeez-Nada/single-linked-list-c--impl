@@ -9,22 +9,17 @@ int main()
     LinkedList list;
 
     list.insert_end(1);
-    list.insert_end(1);
-
-    list.insert_end(3);
     list.insert_end(2);
     list.insert_end(3);
-    list.insert_end(2);
-    list.insert_end(4);
-    list.insert_end(4);
     list.insert_end(1);
+    list.insert_end(4);
 
     list.print();
     cout << endl;
     list.print_addresses();
     cout << "\n---------------------------------------\n";
 
-    list.remove_duplicates();
+    list.remove_last_occurance(17);
 
     list.print();
     cout << endl;

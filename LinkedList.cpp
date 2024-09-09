@@ -33,6 +33,7 @@ public:
         if (head == nullptr)
         {
             cout << "Length: 0" << endl;
+            return;
         }
         cout << "Length: " << length << " | Head: " << head->data << " | Tail: " << tail->data << endl;
         Node *current = head;
@@ -506,6 +507,44 @@ public:
                     prev = prev->next;
             }
             unique = unique->next;
+        }
+    }
+
+    void remove_last_occurance(int val)
+    {
+        if (head == nullptr)
+            return;
+        Node *ptr = head;
+        Node *to_delete = nullptr;
+        Node *prev = nullptr;
+
+        while (ptr != nullptr && ptr->next != nullptr)
+        {
+            if (ptr->next->data == val)
+            {
+                to_delete = ptr->next;
+                prev = ptr;
+            }
+            ptr = ptr->next;
+        }
+        // delete-if head
+        if (head->data == val && to_delete == nullptr)
+        {
+            Node *old_head = head;
+            head = head->next;
+            delete old_head;
+            length--;
+            if (head == nullptr)
+                tail = nullptr;
+            return;
+        }
+        if (to_delete != nullptr)
+        {
+            prev->next = to_delete->next;
+            delete to_delete;
+            length--;
+            if (prev->next == nullptr)
+                tail = prev;
         }
     }
 };
